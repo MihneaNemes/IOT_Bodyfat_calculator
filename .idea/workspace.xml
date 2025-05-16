@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93172243-0a85-49c5-99f5-597bcca19a15" name="Changes" comment="trial">
-      <change afterPath="$PROJECT_DIR$/pictures/test2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="93172243-0a85-49c5-99f5-597bcca19a15" name="Changes" comment="inceput">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bodyfat_regressor.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/fat.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/fat.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/skinny.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/skinny.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bodym_dataset/training_outputs/best_bodyfat_regressor_model.pth" beforeDir="false" afterPath="$PROJECT_DIR$/bodym_dataset/training_outputs/best_bodyfat_regressor_model.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bodym_dataset/training_outputs/bodyfat_norm_params.npz" beforeDir="false" afterPath="$PROJECT_DIR$/bodym_dataset/training_outputs/bodyfat_norm_params.npz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predict_body_fat.py" beforeDir="false" afterPath="$PROJECT_DIR$/predict_body_fat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_model.py" afterDir="false" />
     </list>
@@ -54,6 +51,7 @@
   &quot;keyToString&quot;: {
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.predict_body_fat.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train.executor&quot;: &quot;Run&quot;,
     &quot;Python.train_model.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
@@ -71,6 +69,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mihne\OneDrive\Desktop\sarpili\IOT\pictures" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mihne\OneDrive\Desktop\sarpili\IOT\pictures" />
+      <recent name="C:\Users\mihne\OneDrive\Desktop\sarpili\IOT" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -99,7 +101,11 @@
       <workItem from="1746971624116" duration="4179000" />
       <workItem from="1746995102123" duration="75000" />
       <workItem from="1747047742928" duration="7251000" />
-      <workItem from="1747151304008" duration="9726000" />
+      <workItem from="1747151304008" duration="9916000" />
+      <workItem from="1747162254088" duration="11000" />
+      <workItem from="1747233195727" duration="7132000" />
+      <workItem from="1747301015235" duration="2852000" />
+      <workItem from="1747327100436" duration="9638000" />
     </task>
     <task id="LOCAL-00001" summary="trial">
       <option name="closed" value="true" />
@@ -125,7 +131,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746819325361</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="trial">
+      <option name="closed" value="true" />
+      <created>1747162118663</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747162118663</updated>
+    </task>
+    <task id="LOCAL-00005" summary="inceput">
+      <option name="closed" value="true" />
+      <created>1747162212294</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747162212294</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,11 +166,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="trial" />
-    <option name="LAST_COMMIT_MESSAGE" value="trial" />
+    <MESSAGE value="inceput" />
+    <option name="LAST_COMMIT_MESSAGE" value="inceput" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/IOT$train_model.coverage" NAME="train_model Coverage Results" MODIFIED="1747156019621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/IOT$train_model.coverage" NAME="train_model Coverage Results" MODIFIED="1747331404386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/IOT$train.coverage" NAME="train Coverage Results" MODIFIED="1747235818594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/IOT$main.coverage" NAME="main Coverage Results" MODIFIED="1746799673058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/IOT$predict_body_fat.coverage" NAME="predict_body_fat Coverage Results" MODIFIED="1747161887481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/IOT$predict_body_fat.coverage" NAME="predict_body_fat Coverage Results" MODIFIED="1747343615023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
