@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Fat Predictions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold text-center mb-6">Body Fat Predictions</h1>
+        
+        <!-- Name selection dropdown -->
+        <div class="mb-4">
+            <label for="name-select" class="block text-lg font-medium">Select Name:</label>
+            <select id="name-select" class="mt-1 block w-full p-2 border rounded" onchange="updateDisplay()">
+                <option value="">Select a name</option>
+                {% for name in names %}
+                    <option value="{{ name }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <!-- Predictions table -->
+        <div id="predictions-table" class="hidden">
+            <h2 id="table-title" class="text-2xl font-semibold mb-4"></h2>
+            <table class="w-full border-collapse border">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="border p-2">Prediction ID</th>
+                        <th class="border p-2">Height (cm)</th>
+                        <th class="border p-2">Weight (kg)</th>
+                        <th class="border p-2">Body Fat (%)</th>
+                        <th class="border p-2">Category</th>
+                        <th class="border p-2">Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+        
+        <!-- Chart -->
+        <div id="chart-container" class="hidden mt-6">
+            <h2 class="text-2xl font-semibold mb-4">Body Fat Percentage Over Time</h2>
+            <canvas id="bodyFatChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const predictionsByName = {{ predictions_by_name | tojson }};
+        const chartData = {{ chart_data | safe }};
+        let chart = null;
+
+        function updateDisplay() {
+            const name = document.getElementById('name-select').value;
+            const tableBody = document.getElementById('table-body');
+            const predictionsTable = document.getElementById('predictions-table');
+            const chartContainer = document.getElementById('chart-container');
+            const tableTitle = document.getElementById('table-title');
+
+            // Clear previous table content
+            tableBody.innerHTML = '';
+
+            if (!name) {
+                predictionsTable.classList.add('hidden');
+                chartContainer.classList.add('hidden');
+                if (chart) {
+                    chart.destroy();
+                    chart = null;
+                }
+                return;
+            }
+
+            // Populate table
+            predictionsTable.classList.remove('hidden');
+            tableTitle.textContent = `Predictions for ${name}`;
+            const predictions = predictionsByName[name] || [];
+            predictions.forEach(p => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="border p-2">${p.prediction_id}</td>
+                    <td class="border p-2">${p.height_cm.toFixed(2)}</td>
+                    <td class="border p-2">${p.weight_kg.toFixed(2)}</td>
+                    <td class="border p-2">${p.predicted_body_fat.toFixed(2)}</td>
+                    <td class="border p-2">${p.category}</td>
+                    <td class="border p-2">${p.timestamp}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            // Update chart
+            chartContainer.classList.remove('hidden');
+            if (chart) {
+                chart.destroy();
+            }
+            const ctx = document.getElementById('bodyFatChart').getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: chartData[name].labels,
+                    datasets: [{
+                        label: 'Body Fat Percentage',
+                        data: chartData[name].data,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: { display: true, text: 'Timestamp' }
+                        },
+                        y: {
+                            title: { display: true, text: 'Body Fat (%)' },
+                            beginAtZero: false
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
