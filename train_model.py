@@ -237,7 +237,7 @@ class TransformedSubset(Dataset):
         return len(self.subset)
 
 def main():
-    base_dir = r"C:\Users\mihne\OneDrive\Desktop\sarpili\IOT\bodym_dataset"
+    base_dir = r"bodym_dataset"
     output_dir = os.path.join(base_dir, "training_outputs")
     os.makedirs(output_dir, exist_ok=True)
     model_save_path = os.path.join(output_dir, BEST_MODEL_FILENAME)
