@@ -16,8 +16,8 @@ import cv2
 # Import the predict_body_fat function from the provided script
 from predict_body_fat import predict_body_fat
 
-model_path = "/home/mihnea/Desktop/bodyfat_preictor/best_bodyfat_regressor_model.pth"
-norm_params_path = "/home/mihnea/Desktop/bodyfat_preictor/bodyfat_norm_params.npz"
+model_path = "best_bodyfat_regressor_model.pth"
+norm_params_path = "bodyfat_norm_params.npz"
 
 class BodyFatApp:
     def __init__(self, root):
