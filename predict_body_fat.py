@@ -200,7 +200,7 @@ def predict_body_fat(front_image_path, side_image_path, height_cm, weight_kg, mo
 
 # Main entry point
 if __name__ == "__main__":
-    base_dir = r"C:\Users\mihne\OneDrive\Desktop\sarpili\IOT"
+    base_dir = r"IOT"
     model_file_path = os.path.join(base_dir, "bodym_dataset", "training_outputs", "best_bodyfat_regressor_model.pth")
     norm_params_file_path = os.path.join(base_dir, "bodym_dataset", "training_outputs", "bodyfat_norm_params.npz")
     front_image_path = os.path.join(base_dir, "pictures", "skinny_front.jpg")
